@@ -31,3 +31,22 @@ pub fn list_ignore_templates(path: &str) -> Vec<Template> {
     entries.sort_by(|a, b| a.name.cmp(&b.name));
     entries
 }
+
+pub fn list_templates() -> Vec<Template> {
+    let templates = list_ignore_templates("./gitignore");
+    templates
+}
+
+pub fn find_template(template_name: &str) -> Option<Template> {
+    let templates = list_templates();
+    for template in templates {
+        if template.name == template_name {
+            return Some(template)
+        }
+    }
+    None
+}
+
+pub fn create_file(template: Template, outfile_path: &str) {
+    fs::copy(template.path, outfile_path).unwrap();
+}

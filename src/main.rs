@@ -1,30 +1,11 @@
 extern crate ggg;
 
 use log;
-use std::fs;
 use std::path::Path;
 use clap::{App, Arg, crate_authors, crate_version};
-use ggg::{Template, list_ignore_templates};
+use ggg::{list_templates, find_template, create_file};
 
 
-fn list_templates() -> Vec<Template> {
-    let templates = list_ignore_templates("./gitignore");
-    templates
-}
-
-fn find_template(template_name: &str) -> Option<Template> {
-    let templates = list_templates();
-    for template in templates {
-        if template.name == template_name {
-            return Some(template)
-        }
-    }
-    None
-}
-
-fn create_file(template: Template, outfile_path: &str) {
-    fs::copy(template.path, outfile_path).unwrap();
-}
 
 fn list_command() {
     let templates = list_templates();
