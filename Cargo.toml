@@ -1,5 +1,5 @@
 [package]
-name = "gitignore_generator"
+name = "ggg"
 version = "0.1.0"
 authors = ["Anh Mai <theanht1k20@gmail.com>"]
 edition = "2018"
@@ -7,3 +7,8 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+log = "0.4.0"
+env_logger = "0.7.1"
+clap = "3.0.0-beta.1"
+regex = "1"
+
