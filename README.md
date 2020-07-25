@@ -20,3 +20,6 @@ cargo run -- --help
 ## Resouces:
 - [Gitignore templates collection](https://github.com/github/gitignore)
 
+## TODOs:
+- Support `Global` and `community` templates
+- Add tests
